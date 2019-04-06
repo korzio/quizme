@@ -4,13 +4,13 @@ const program = require('commander')
 
 const { description, version } = require('./package.json')
 
-const { questions, start } = require('./commands')
+const { configure, start } = require('./commands')
 
 program
   .command('configure <url>')
   .description('configure a quiz')
   .action((url) => {
-    questions(require(url))
+    configure({ questions: require(url) })
   })
   
 program

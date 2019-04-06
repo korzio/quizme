@@ -24,7 +24,8 @@ function start() {
   inquirer.prompt(questions)
     .then((result) => {
       save(result)
-      console.log('Thanks for answering!')
+      console.log(`Your asnwers: ${JSON.stringify(read().state)}`)
+      console.log('Thanks for participating!')
     })
 }
 
